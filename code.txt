@@ -1,0 +1,21 @@
+ <!-- <?php 
+            foreach($result as $projet) {
+
+            ?>
+                <tr>
+                    <td><?php echo $projet['titre'] ?></td>
+                    <td><?php echo $projet['description'] ?></td>
+                    <td><?php echo $projet['categorie'] ?></td>
+                    <td><?php echo $projet['prix'] ?></td>
+                    <td><?php echo $projet['datepublication'] ?></td>
+                    <td><?php echo $projet['lieu'] ?></td>
+                    <td><?php echo $projet['photo'] ?></td>
+                    <td> <a href="supprimer.php?id=<?php echo $projet['id'] ?>">Supprimer</a></td>
+                    <td> <a href="modifier.php?id=<?php echo $projet['id'] ?>">Modifier</a></td>
+                </tr>
+    
+            <?php   
+
+            }
+
+            ?> -->

@@ -1,0 +1,206 @@
+.menu {
+  display: flex;
+  justify-content: space-around;
+}
+
+.titre {
+  font-size: 40px;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.logo {
+  width: 200px;
+  height: 90px;
+  margin-top: 20px;
+}
+
+.titrelogo {
+  display: flex;
+  justify-content: space-around;
+  background-color: rgb(67, 243, 67);
+}
+
+.accroche {
+  background-color: rgb(140, 245, 140);
+  font-size: 30px;
+  text-align: center;
+  font-family: Arial, Helvetica, sans-serif;
+}
+
+.inscription {
+  border-radius: 20px;
+  border-color: white;
+  background-color: hotpink;
+  margin-right: 20px;
+  width: 100px;
+  height: 50px;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.connexion {
+  border-radius: 20px;
+  border-color: white;
+  background-color: hotpink;
+  width: 100px;
+  height: 50px;
+  margin-top: 20px;
+  text-decoration: none;
+}
+
+.admin {
+  border-radius: 20px;
+  border-color: white;
+  background-color: hotpink;
+  width: 100px;
+  height: 50px;
+  margin-top: 20px;
+  text-decoration: none;
+  margin-left: 20px;
+}
+
+.maison {
+  width: 320px;
+  height: 213px;
+}
+
+.carte {
+  width: 320px;
+  border: 2px solid;
+  margin-top: 50px;
+  margin-left: 50px;
+  background-color: rgb(124, 226, 133);
+}
+
+.touteslescartes {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.carte p {
+  padding: 10px;
+}
+
+.logomaison {
+  width: 50px;
+  padding: 35px;
+  vertical-align: middle;
+}
+
+.inscription2 {
+  background-color: rgb(95, 197, 95);
+  text-align: center;
+  font-size: 30px;
+  font-family: Arial, Helvetica, sans-serif;
+  margin-top: 20px;
+}
+
+.pseudo {
+  background-color: rgb(102, 211, 120);
+}
+
+table {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+}
+
+.bouton {
+  display: flex;
+  justify-content: center;
+  margin: auto;
+  background-color: hotpink;
+  font-size: 20px;
+  border-radius: 20px;
+  border-color: white;
+}
+
+input {
+  font-size: 20px;
+}
+
+.form {
+  text-align: center;
+}
+
+.formulaire {
+  display: flex;
+  justify-content: center;
+  margin-left: 100px;
+}
+
+.boutonajouter {
+  background-color: hotpink;
+  font-size: 20px;
+  border-radius: 20px;
+  border-color: white;
+  margin-left: 70px;
+}
+
+.select {
+  font-size: 20px;
+}
+
+.carte2 {
+  margin: 20px;
+}
+
+/* * {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  height: 100vh;
+  background-color: rgb(102, 211, 120);
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.box {
+  background-color: rgb(102, 211, 120);
+  color: beige;
+  width: 125px;
+  line-height: 125px;
+  text-align: center;
+  margin: 10px;
+  display: none;
+}
+
+.show {
+  display: block;
+}
+
+.btn {
+  border: none;
+  outline: none;
+  margin-bottom: 20px;
+  padding: 12px 16px;
+  background-color: #f1f1f1;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: #ddd;
+} */
+
+.recherche {
+  display: flex;
+  justify-content: center;
+  font-size: 20px;
+  margin-right: auto;
+  margin-left: auto;
+}
+
+input {
+  text-align: center;
+}
+
+a.inscription {
+  text-decoration: none;
+  padding: 1px 6px 1px 6px;
+  margin-left: 70px;
+}
