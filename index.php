@@ -24,13 +24,23 @@ session_start();
     <header>
 
     <div class="titrelogo">
-        <ul class="menu">
+        <div class="menu">
      
             <button class="inscription"> <a href="inscription.php">S'inscrire </a> </button>
             <button class="connexion"> <a href="connexion.php">Se connecter </a> </button>
             
             
-        </ul>
+</div>
+
+
+
+<div id="navbar">
+ <a href="#home"></a>
+ <a href="#news"></a>
+ <a href="#contact"></a>
+ </div>
+
+
 
         <h3 class="titre">
             Petites annonces 
@@ -129,6 +139,8 @@ session_start();
       <?php
     } ; 
 ?>
+
+
 
 <!-- <div class="carte">
 <img class="maison" src="images/maison.jpg" alt="maison">

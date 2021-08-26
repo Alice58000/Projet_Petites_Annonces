@@ -1,5 +1,7 @@
 <?php
 session_start();
+if(!isset($_SESSION['id']))
+header('Location:index.php');
 ?>
 
 
@@ -19,12 +21,12 @@ session_start();
 
 
     <div class="titrelogo">
-        <ul class="menu">
+        <div class="menu">
      
             
             <button class="connexion"> <a href="deconnexion.php">Se deconnecter </a> </button>
             
-        </ul>
+</div>
 
         <h3 class="titre">
             Petites annonces 

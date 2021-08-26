@@ -1,10 +1,15 @@
-$sql = "SELECT * FROM annonces ";
-        foreach ($bdd -> query($sql) as $row) {
-   
-?>
+<?php
+$annoncesParPage= 8;
+$annoncesTotalesReg= $bdd->query('SELECT id FROM annonces');
+$annoncesTotales= $annoncesTotalesReg->rowCount();
+$pagesTotales= ceil($annoncesTotales/$annoncesParPage);
 
-            <div class="carte">
-                <img src='images/<?php echo $row['photo'] ?>'
-                    alt="maison" width="550px" height="264px"> 
-       
-            </div>
+if(isset($_GET['page']) && !empty($_GET['page']) && $_GET['page'] > 0 && $_GET['page'] <= $pagesTotales){
+    $_GET['page'] = intval($_GET['page']);
+    $pageCourante = $_GET['page'];
+}else{
+    $pageCourante = 1;
+}
+
+
+?> 

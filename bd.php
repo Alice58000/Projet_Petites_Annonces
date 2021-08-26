@@ -2,7 +2,8 @@
 
 session_start();
 require_once("connexionbd.php");
-
+if(!isset($_SESSION['id']))
+header('Location:index.php');
 
 
 var_dump($_POST);
