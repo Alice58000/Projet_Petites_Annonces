@@ -50,9 +50,9 @@ session_start();
     
 </div>
 
- <div class="objet"></div> 
+ <!-- <div class="objet"></div> 
      <div class="box">Maison</div>
-    <div class="box">Appartement</div>  -->
+    <div class="box">Appartement</div>   -->
     
 
     <form method="GET" action="index.php">
@@ -95,23 +95,27 @@ session_start();
                     $var_temp ->closeCursor();
                 }}
                 ?>
+
+<div class="touteslescartes"> 
+
 <?php
 
 
-    $sql = "SELECT * FROM annonces ";
+    $sql = "SELECT * FROM annonces";
+
         foreach ($bdd -> query($sql) as $row) {
    
- 
+            echo '<div class="carte">';
             
 
    ?>
 
 
-<section>
 
-<div class="touteslescartes">
 
-<div class="carte">
+
+
+<!-- <div class="carte"> -->
 <?= "<img class='maison' src='images/".$row["photo"]."' alt='maison'>" ?>
 <p class="categorie"><?= $row["categorie"]?></p>
 <p class="description"><?= $row["description"]?></p>
@@ -120,10 +124,11 @@ session_start();
 
 </div>
 
-<?php
+
+
+      <?php
     } ; 
 ?>
-
 
 <!-- <div class="carte">
 <img class="maison" src="images/maison.jpg" alt="maison">

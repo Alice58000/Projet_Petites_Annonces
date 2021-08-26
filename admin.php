@@ -16,7 +16,7 @@ session_start();
     <title>Petites annonces </title>
 </head>
 <body>
-    <header>
+
 
     <div class="titrelogo">
         <ul class="menu">
@@ -40,7 +40,7 @@ session_start();
                 <h2 class="form"> Mes annonces</h2>
                 <div class="formulaire">
                 <br>
-                <form action="bd.php" method="Post">
+                <form action="bd.php" method="POST" enctype="multipart/form-data">
 
                 
                     <input  type="text" name="titre" placeholder="Titre de l'annonce" required>
@@ -86,28 +86,23 @@ session_start();
             </div>
         </section>
 
-</body>
-</html>
+
 
 <?php 
 require_once("connexionbd.php");
 ?>
 
-
+<div class="touteslescartes">
 
 <?php
 
-$sql = "SELECT * FROM annonces ";
-    foreach ($bdd -> query($sql) as $row) {
-    
-      
-        
-        echo '<a class="inscription" href="suppression.php?id=' . $row["id"] . '">Suppprimer</a>' ;
-        echo '<a class="inscription" href="modification.php?id=' . $row["id"] . '">Modifier</a>' ;
-   
+
     
 
-$sql = "SELECT * FROM annonces ";
+if(isset($_SESSION ['id']))
+    $sql = "SELECT * FROM annonces WHERE idconnexion='".$_SESSION ['id']."'";
+
+    
         foreach ($bdd -> query($sql) as $row) {
    
  
@@ -119,20 +114,24 @@ $sql = "SELECT * FROM annonces ";
             // echo "<p>" . $row["lieu"] . "</p>";
             // echo "<img src='" . $row["photo"] . "'/>";
             
+            echo '<div class="carte">';
 ?>
-        <div class="touteslescartes">
-            <div class="carte">
+        
+            
             <?= "<img class='maison' src='images/".$row["photo"]."' alt='maison'>" ?>
             <p class="categorie"><?= $row["categorie"]?></p>
             <p class="description"><?= $row["description"]?></p>
             <p class="lieu"><?= $row["lieu"]?></p>
-            <p class="prix"><?= $row["prix"]?></p>     
-
+            <p class="prix"><?= $row["prix"]?></p>  
+            <div>
+                <?= '<a class="inscription" href="suppression.php?id=' . $row["id"] . '">Suppprimer</a>' ?>
+                <?= '<a class="inscription" href="modification.php?id=' . $row["id"] . '">Modifier</a>' ?>
+            </div>
         </div>
-        </div>
-       
         <?php
-    }}; 
+    }; 
     ?>
-
+    </div>
+</body>
+</html>
     
