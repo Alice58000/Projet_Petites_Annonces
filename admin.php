@@ -29,7 +29,7 @@ header('Location:index.php');
 </div>
 
         <h3 class="titre">
-            Petites annonces 
+           <a class="titre2" href="index.php"> Petites annonces </a>
         </h3>
 
         <img class="logo" src="images/logo2.png" alt="logo">
@@ -42,9 +42,12 @@ header('Location:index.php');
                 <h2 class="form"> Mes annonces</h2>
                 <div class="formulaire">
                 <br>
-                <form action="bd.php" method="POST" enctype="multipart/form-data">
+                <form action="bd.php" method="POST" enctype="multipart/form-data"> 
+
+                <!-- a mettre pour upload images -->
 
                 
+
                     <input  type="text" name="titre" placeholder="Titre de l'annonce" required>
                     <br> <br>
 
@@ -70,7 +73,7 @@ header('Location:index.php');
                     <input  type="text" name="lieu" placeholder="Lieu" required>
                     <br> <br>
 
-                    <input  type="file" name="photo"  required>
+                    <input  type="file" name="photo"  >
                     <br> <br>
 
 
@@ -98,7 +101,7 @@ require_once("connexionbd.php");
 
 <?php
 
-
+//affichage des cartes
     
 
 if(isset($_SESSION ['id']))

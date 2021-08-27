@@ -2,23 +2,46 @@
 
 session_start();
 require_once("connexionbd.php");
+
 if(!isset($_SESSION['id']))
 header('Location:index.php');
 
 
 var_dump($_POST);
 
-if(isset($_FILES['photo'])) {
 
 
-$tmpName = $_FILES['photo']['tmp_name'];
-$name = $_FILES['photo']['name'];
-// $size = $_FILES['photo']['size'];
-// $error = $_FILES['photo']['error'];
 
-move_uploaded_file($tmpName, './upload/'.$name);
+
+//upload d'images et images par défaut 
+  if(isset($_FILES['photo'])) {
+
+
+    $tmpName = $_FILES['photo']['tmp_name'];
+    $name = $_FILES['photo']['name'];
+    // $size = $_FILES['photo']['size'];
+    // $error = $_FILES['photo']['error'];
+
+    move_uploaded_file($tmpName, './upload/'.$name);
+   if (empty($name)) 
+   {
+    $name= "logomaison.jpg";
+  }
 }
 
+
+
+  // if(isset($_FILES['photo'])) {
+
+
+  //   $tmpName = $_FILES['photo']['tmp_name'];
+  //   $name = $_FILES['photo']['name'];
+  //   // $size = $_FILES['photo']['size'];
+  //   // $error = $_FILES['photo']['error'];
+
+  //   move_uploaded_file($tmpName, './upload/'.$name);
+
+  
 
 
 
@@ -40,7 +63,7 @@ move_uploaded_file($tmpName, './upload/'.$name);
      $bdd->exec("INSERT INTO annonces (idconnexion, titre, description, categorie, prix, datepublication, lieu, photo) VALUES('$id_connexion','$titre','$description','$categorie', '$prix', '$datepublication', '$lieu', '$photo')");
      echo '<h3>Données transmises à la base de données </h3>';
      header ('Location: index.php');
-
+  
 
 ?>
     

@@ -18,7 +18,7 @@ session_start();
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
 
-    <title>Petites annonces </title>
+    <title> Petites annonces </title>
 </head>
 <body>
     <header>
@@ -28,7 +28,8 @@ session_start();
      
             <button class="inscription"> <a href="inscription.php">S'inscrire </a> </button>
             <button class="connexion"> <a href="connexion.php">Se connecter </a> </button>
-            
+
+            <button class="admin"> <a href="admin.php">Admin </a> </button>
             
 </div>
 
@@ -108,6 +109,7 @@ session_start();
 
 <div class="touteslescartes"> 
 
+
 <?php
 
 
@@ -125,7 +127,7 @@ session_start();
 
 
 
-<!-- <div class="carte"> -->
+
 <?= "<img class='maison' src='images/".$row["photo"]."' alt='maison'>" ?>
 <p class="categorie"><?= $row["categorie"]?></p>
 <p class="description"><?= $row["description"]?></p>

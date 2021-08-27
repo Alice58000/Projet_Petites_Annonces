@@ -1,7 +1,6 @@
 <?php
 require_once("connexionbd.php");
-if(!isset($_SESSION['id']))
-header('Location:index.php');
+
 ?>
 
 <!DOCTYPE html>

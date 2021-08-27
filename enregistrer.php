@@ -23,3 +23,5 @@ if($row == 0)
 }          
  else header('Location:error.php?login_already_exists');
 ?>
+
+<!-- // formulaire pour se connecter a son espace personnel -->
