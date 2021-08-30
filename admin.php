@@ -25,7 +25,7 @@ header('Location:index.php');
      
             
             <button class="connexion"> <a href="deconnexion.php">Se deconnecter </a> </button>
-            
+            <button class="retour"> <a href="index.php">Retour </a> </button>
 </div>
 
         <h3 class="titre">

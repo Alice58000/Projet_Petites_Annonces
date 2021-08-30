@@ -35,11 +35,11 @@ session_start();
 
 
 
-<div id="navbar">
+<!-- <div id="navbar">
  <a href="#home"></a>
  <a href="#news"></a>
  <a href="#contact"></a>
- </div>
+ </div> -->
 
 
 
@@ -61,56 +61,14 @@ session_start();
     
 </div>
 
- <!-- <div class="objet"></div> 
-     <div class="box">Maison</div>
-    <div class="box">Appartement</div>   -->
-    
 
-    <form method="GET" action="index.php">
-          
-                <div class="recherche">
-                   
-                </div>
-                <div class="recherche"><label>Tous les biens</label><input type="radio" name="categorie" value="Tous" checked/></div>
-                <div class="recherche"><label>Maison</label><input type="radio" name="categorie" value="maison"/></div>
-                <div class="recherche"><label>Appartement</label><input type="radio" name="categorie" value="appartement"/></div>
-                
-                <br/>
-             
-        </form>
-        
-        <?php
-            if(isset($_GET['recherche']))
-            {
-                $recherche = htmlspecialchars($_GET['recherche']);
-                $categorie = $_GET['categorie'];
-                if($categorie == 'Tous')
-                {
-                    require_once('connexionbd.php');
 
-                    $sql_query = "SELECT * FROM annonces INNER JOIN connexion ON id = id WHERE title LIKE '%$recherche%'";
-                    $var_temp = $bdd->prepare($sql_query);
-                    $var_temp->execute();
 
-                    while ($data = $var_temp ->fetch())
-                    {
-                       
-                        
-                      
-                        echo "<p>" . $row["categorie"] . "</p>";
-                      
-                      
-                        
-                    }
-                    
-                    $var_temp ->closeCursor();
-                }}
-                ?>
 
 <div class="touteslescartes"> 
 
 
-<?php
+<!-- <?php
 
 
     $sql = "SELECT * FROM annonces";
@@ -140,7 +98,58 @@ session_start();
 
       <?php
     } ; 
-?>
+?> -->
+
+
+<?php
+
+
+require_once("connexionbd.php");
+
+// $page = $_GET['page'];
+$limite = 10;
+
+// Partie "Requête"
+/* On calcule donc le numéro du premier enregistrement */
+$page = (!empty($_GET['page']) ? $_GET['page'] : 1);
+$debut = ($page - 1) * $limite;
+/* On ajoute le marqueur pour spécifier le premier enregistrement */
+$sql = 'SELECT * FROM `annonces` LIMIT :limite OFFSET :debut';
+
+    $sql = $bdd->prepare($sql);
+    $sql->bindValue('limite', $limite, PDO::PARAM_INT);
+    /* On lie aussi la valeur */
+    $sql->bindValue('debut', $debut, PDO::PARAM_INT);
+    $sql->execute();
+
+        // Partie "Boucle"
+        while ($row = $sql->fetch()) {
+        // C'est là qu'on affiche les données  :)
+        ?>
+        <div class="carte">
+     <?= "<img class='maison' src='images/".$row["photo"]."' alt='maison'>" ?>
+     <p class="categorie"><?= $row["categorie"]?></p>
+     <p class="description"><?= $row["description"]?></p>
+     <p class="lieu"><?= $row["lieu"]?></p>
+     <p class="prix"><?= $row["prix"]?></p>
+     
+     </div>
+     <?php
+        }
+
+        // Partie "Liens"
+        /* Notez que les liens ainsi mis vont bien faire rester sur le même script en passant
+        * le numéro de page en paramètre */
+        ?>
+</header>
+
+<footer>
+
+<div class="pagination">
+        <a href="?page=<?php echo $page - 1; ?>">Page précédente</a>
+
+        <a href="?page=<?php echo $page + 1; ?>">Page suivante</a>
+</div>
 
 
 
@@ -511,10 +520,10 @@ Quartier Victor Hugo, vous trouverez cet appartement T2 composé d'une grande pi
 </div>
 </section>  -->
        
-</header>
+    </footer>
 
 
 <script src="main.js"></script>
-
+ 
 </body>
 </html>
