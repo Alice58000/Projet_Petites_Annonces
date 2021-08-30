@@ -18,8 +18,6 @@ require_once("connexionbd.php");
 <body>
     
     
-
-
 <!--     
    // Vérifier si le formulaire est soumis 
 

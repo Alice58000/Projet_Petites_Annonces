@@ -7,9 +7,6 @@ session_start();
 ?>
 
 
-
-
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
@@ -33,16 +30,6 @@ session_start();
             
 </div>
 
-
-
-<!-- <div id="navbar">
- <a href="#home"></a>
- <a href="#news"></a>
- <a href="#contact"></a>
- </div> -->
-
-
-
         <h3 class="titre">
             Petites annonces 
         </h3>
@@ -57,13 +44,7 @@ session_start();
         </h3>
     </div>
 
-
-    
 </div>
-
-
-
-
 
 <div class="touteslescartes"> 
 
@@ -81,11 +62,6 @@ session_start();
    ?>
 
 
-
-
-
-
-
 <?= "<img class='maison' src='images/".$row["photo"]."' alt='maison'>" ?>
 <p class="categorie"><?= $row["categorie"]?></p>
 <p class="description"><?= $row["description"]?></p>
@@ -93,7 +69,6 @@ session_start();
 <p class="prix"><?= $row["prix"]?></p>
 
 </div>
-
 
 
       <?php

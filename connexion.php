@@ -1,5 +1,3 @@
-
-
 <html>
    <head>
       <title>connexion</title>
@@ -65,4 +63,3 @@
       </div>
    </body>
 </html>
-</body>

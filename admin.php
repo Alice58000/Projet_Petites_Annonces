@@ -4,9 +4,6 @@ if(!isset($_SESSION['id']))
 header('Location:index.php');
 ?>
 
-
-
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -17,16 +14,15 @@ header('Location:index.php');
 
     <title>Petites annonces </title>
 </head>
-<body>
 
+    <body>
 
     <div class="titrelogo">
         <div class="menu">
      
-            
             <button class="connexion"> <a href="deconnexion.php">Se deconnecter </a> </button>
             <button class="retour"> <a href="index.php">Retour </a> </button>
-</div>
+    </div>
 
         <h3 class="titre">
            <a class="titre2" href="index.php"> Petites annonces </a>
@@ -34,7 +30,7 @@ header('Location:index.php');
 
         <img class="logo" src="images/logo2.png" alt="logo">
 
-    </div>
+        </div>
   
     
     <section>
@@ -45,8 +41,6 @@ header('Location:index.php');
                 <form action="bd.php" method="POST" enctype="multipart/form-data"> 
 
                 <!-- a mettre pour upload images -->
-
-                
 
                     <input  type="text" name="titre" placeholder="Titre de l'annonce" required>
                     <br> <br>
@@ -76,53 +70,38 @@ header('Location:index.php');
                     <input  type="file" name="photo"  >
                     <br> <br>
 
-
-                   
-
-                     </select>
+                    </select>
 
                     <br> <input class="boutonajouter" type="submit" value="Ajouter">
                     <br> <br>
 
                 </form>
   
-
-
-            </div>
-        </section>
+              </div>
+    </section>
 
 
 
-<?php 
-require_once("connexionbd.php");
-?>
+    <?php 
+    require_once("connexionbd.php");
+    ?>
 
-<div class="touteslescartes">
+            <div class="touteslescartes">
 
-<?php
+    <?php
 
-//affichage des cartes
+    //affichage des cartes
     
 
-if(isset($_SESSION ['id']))
-    $sql = "SELECT * FROM annonces WHERE idconnexion='".$_SESSION ['id']."'";
+    if(isset($_SESSION ['id']))
+        $sql = "SELECT * FROM annonces WHERE idconnexion='".$_SESSION ['id']."'";
 
     
         foreach ($bdd -> query($sql) as $row) {
    
- 
-            // echo "<p>" . $row["titre"] . "</p>";
-            // echo "<p>" . $row["description"] . "</p>";
-            // echo "<p>" . $row["categorie"] . "</p>";
-            // echo "<p>" . $row["prix"] . " € </p>";
-            // echo "<p>" . $row["datepublication"] . "</p>";
-            // echo "<p>" . $row["lieu"] . "</p>";
-            // echo "<img src='" . $row["photo"] . "'/>";
-            
             echo '<div class="carte">';
 ?>
         
-            
             <?= "<img class='maison' src='images/".$row["photo"]."' alt='maison'>" ?>
             <p class="categorie"><?= $row["categorie"]?></p>
             <p class="description"><?= $row["description"]?></p>
@@ -133,9 +112,11 @@ if(isset($_SESSION ['id']))
                 <?= '<a class="inscription" href="modification.php?id=' . $row["id"] . '">Modifier</a>' ?>
             </div>
         </div>
-        <?php
+
+    <?php
     }; 
     ?>
+    
     </div>
 </body>
 </html>

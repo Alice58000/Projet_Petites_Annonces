@@ -1,7 +1,7 @@
 <?php
 session_start();
 if(!isset($_SESSION ['pseudo']))
-header('Emplacement:index.php');
+header('Emplacement:admin.php');
 ?>
 
 <?php

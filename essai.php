@@ -3,9 +3,9 @@
                 <div class="recherche">
            
                 </div>
-                <div class="recherche"><label>Tous les biens</label><input type="radio" name="categorie" value="Tous" checked/></div>
-                <div class="recherche"><label>Maison</label><input type="radio" name="categorie" value="maison"/></div>
-                <div class="recherche"><label>Appartement</label><input type="radio" name="categorie" value="appartement"/></div>
+                <div class="recherche"><label>Tous les biens</label><input type="biens" name="categorie" value="Tous" checked/></div>
+                <div class="recherche"><label>Maison</label><input type="biens" name="categorie" value="maison"/></div>
+                <div class="recherche"><label>Appartement</label><input type="biens" name="categorie" value="appartement"/></div>
                 <input type="submit" value="Rechercher"/>
                 <br/>
             

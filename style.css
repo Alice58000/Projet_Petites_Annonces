@@ -103,10 +103,8 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-  /* width: 320px; */
   border: 2px solid;
   margin-top: 50px;
-  /* margin-left: 50px; */
   background-color: rgb(149 245 155);
 }
 
@@ -204,47 +202,6 @@ input {
   margin: 20px;
 }
 
-/* * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  height: 100vh;
-  background-color: rgb(102, 211, 120);
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-.box {
-  background-color: rgb(102, 211, 120);
-  color: beige;
-  width: 125px;
-  line-height: 125px;
-  text-align: center;
-  margin: 10px;
-  display: none;
-}
-
-.show {
-  display: block;
-}
-
-.btn {
-  border: none;
-  outline: none;
-  margin-bottom: 20px;
-  padding: 12px 16px;
-  background-color: #f1f1f1;
-  cursor: pointer;
-}
-
-.btn:hover {
-  background-color: #ddd;
-} */
-
 .recherche {
   display: flex;
   justify-content: center;
@@ -275,25 +232,6 @@ a.inscription {
     padding: 100px;
   }
 }
-
-/* #navbar {
-  background-color: rgb(102, 211, 120);
-  position: fixed;
-  display: flex;
-  flex-direction: row;
-  top: -56px;
-  width: 100%;
-  transition: top 0.8s;
-}
-#navbar a {
-  color: white;
-  padding: 16px;
-  text-decoration: none;
-}
-#navbar a:hover {
-  background-color: lightgrey;
-  color: black;
-} */
 
 a {
   text-decoration: none;

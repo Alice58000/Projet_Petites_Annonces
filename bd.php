@@ -3,11 +3,11 @@
 session_start();
 require_once("connexionbd.php");
 
-if(!isset($_SESSION['id']))
-header('Location:index.php');
+  if(!isset($_SESSION['id']))
+  header('Location:index.php');
 
 
-var_dump($_POST);
+  var_dump($_POST);
 
 
 
@@ -26,30 +26,15 @@ var_dump($_POST);
    if (empty($name)) 
    {
     $name= "logomaison.jpg";
+   }
   }
-}
-
-
-
-  // if(isset($_FILES['photo'])) {
-
-
-  //   $tmpName = $_FILES['photo']['tmp_name'];
-  //   $name = $_FILES['photo']['name'];
-  //   // $size = $_FILES['photo']['size'];
-  //   // $error = $_FILES['photo']['error'];
-
-  //   move_uploaded_file($tmpName, './upload/'.$name);
-
-  
-
-
 
    // Vérifier si le formulaire est soumis 
 
      /* récupérer les données du formulaire en utilisant 
         la valeur des attributs name comme clé 
        */
+
      $id_connexion= $_SESSION['id'];
      $titre = $_POST['titre']; 
      $description = $_POST['description']; 
